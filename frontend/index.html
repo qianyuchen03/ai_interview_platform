@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Interview Prep</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>AI Interview Prep</h1>
+    <p>Personalized interview questions and rubric-based feedback, generated from any job description.</p>
+  </header>
+
+  <main>
+    <section id="setup-section" class="card">
+      <h2>Start a session</h2>
+      <form id="session-form">
+        <label>Name <input type="text" id="name" placeholder="Optional" /></label>
+        <label>Email <input type="email" id="email" required /></label>
+        <label>Job title <input type="text" id="job-title" required /></label>
+        <label>Job description <textarea id="job-description" rows="6" required></textarea></label>
+        <label># Questions <input type="number" id="num-questions" min="1" max="10" value="5" /></label>
+        <button type="submit">Generate Questions</button>
+      </form>
+      <div id="setup-status"></div>
+    </section>
+
+    <section id="questions-section" class="card hidden">
+      <h2>Interview Questions</h2>
+      <div id="questions-list"></div>
+    </section>
+
+    <section id="performance-section" class="card">
+      <h2>Performance</h2>
+      <button id="load-performance">Load my performance</button>
+      <div id="performance-summary"></div>
+      <canvas id="trend-chart" height="120"></canvas>
+      <canvas id="category-chart" height="120"></canvas>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
